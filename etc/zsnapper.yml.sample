@@ -1,0 +1,14 @@
+- family: quick
+  datasets:
+    - zones/var
+    - data/delegated/*
+  schedule: "0 */5 * * * *"
+  keep: 12
+  recursive: false
+
+- family: hourly
+  datasets:
+    - zones/$(vmadm list -Ho uuid)*
+  schedule: "@hourly"
+  keep: 12
+  recursive: true
