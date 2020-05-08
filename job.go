@@ -109,9 +109,8 @@ func (j Job) clean(dataset string) error {
 	}
 	for _, snap := range matching[:len(matching)-j.Keep] {
 		if err := snap.Destroy(flags); err != nil {
-			return err
-		}
-		if verbose {
+			fmt.Printf("Destroy %s: %v\n", snap.Name, err)
+		} else if verbose {
 			fmt.Println("Destroyed", snap.Name)
 		}
 	}
