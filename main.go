@@ -6,7 +6,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/calmh/zfs"
+	"github.com/calmh/zsnapper/zfs"
 	"github.com/robfig/cron"
 )
 

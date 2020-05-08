@@ -5,7 +5,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/calmh/zfs"
+	"github.com/calmh/zsnapper/zfs"
 )
 
 var (

@@ -9,12 +9,12 @@ mkdir -p build/zsnapper
 for os in linux freebsd solaris ; do
 	export GOARCH=amd64
 	export GOOS="$os"
-	gb build -ldflags -w
-	[ -f "bin/zsnapper-$os-amd64" ] && mv "bin/zsnapper-$os-amd64" "bin/zsnapper"
+	go build -ldflags -w
 
 	rm -rf build/zsnapper/bin
-	mv bin build/zsnapper/bin
+	mkdir build/zsnapper/bin
+	mv zsnapper build/zsnapper/bin
 	cp -r etc man build/zsnapper
 	cp README.md build/zsnapper/README.txt
-	tar -C build -zcvf "zsnapper-$os-amd64.tar.gz" zsnapper
+	tar -C build -zcf "zsnapper-$os-amd64.tar.gz" zsnapper
 done

@@ -47,7 +47,7 @@ func TestLoadJobs(t *testing.T) {
 		t.Fatal(err)
 	}
 	if len(jobs) != len(expected) {
-		t.Fatal("Number of jobs %d != %d", len(jobs), len(expected))
+		t.Fatalf("Number of jobs %d != %d", len(jobs), len(expected))
 	}
 	for i := range expected {
 		if !reflect.DeepEqual(jobs[i], expected[i]) {

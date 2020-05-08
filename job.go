@@ -7,7 +7,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/calmh/zfs"
+	"github.com/calmh/zsnapper/zfs"
 	"gopkg.in/yaml.v2"
 )
 

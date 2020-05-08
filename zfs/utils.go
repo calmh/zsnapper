@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 
-	"code.google.com/p/go-uuid/uuid"
+	"github.com/google/uuid"
 )
 
 type command struct {
@@ -39,9 +39,9 @@ func (c *command) Run(arg ...string) ([][]string, error) {
 	id := uuid.New()
 	joinedArgs := strings.Join(cmd.Args, " ")
 
-	logger.Log([]string{"ID:" + id, "START", joinedArgs})
+	logger.Log([]string{"ID:" + id.String(), "START", joinedArgs})
 	err := cmd.Run()
-	logger.Log([]string{"ID:" + id, "FINISH"})
+	logger.Log([]string{"ID:" + id.String(), "FINISH"})
 
 	if err != nil {
 		return nil, &Error{
